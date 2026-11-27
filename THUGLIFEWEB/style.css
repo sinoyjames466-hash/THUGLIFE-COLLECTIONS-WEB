@@ -1,0 +1,624 @@
+
+/* GENERAL SETTINGS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 75px;
+}
+
+body {
+    width: 100%;
+    overflow-x: hidden;
+    background: #070707;
+    color: white;
+    font-family: "Montserrat", Arial, sans-serif;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* HEADER */
+.site-header {
+    min-height: 76px;
+    width: 100%;
+    padding: 15px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #080808;
+    position: relative;
+    z-index: 100;
+}
+
+.brand {
+    font-size: clamp(17px, 2.5vw, 29px);
+    font-weight: 900;
+    letter-spacing: 3px;
+    white-space: nowrap;
+}
+
+.brand-muted {
+    color: #858585;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.navigation a {
+    font-size: 13px;
+    transition: .3s;
+}
+
+.navigation a:hover {
+    color: #999;
+}
+
+/* MOBILE MENU BUTTON */
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    width: 35px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    margin: 6px 0;
+    background: white;
+}
+
+/* HERO */
+.hero {
+    width: 100%;
+    min-height: 590px;
+    height: 75vh;
+    max-height: 720px;
+    padding: 60px 10%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    isolation: isolate;
+
+    background:
+        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+        url("THUGLIFE BG.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+        repeating-linear-gradient(
+            135deg,
+            transparent 0 35px,
+            rgba(255,255,255,.025) 36px
+        );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 650px;
+}
+
+.eyebrow {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 7vw, 88px);
+    line-height: 1;
+    letter-spacing: -3px;
+    font-weight: 900;
+}
+
+.period {
+    color: #999;
+}
+
+.hero-description {
+    color: #ccc;
+    font-size: 15px;
+    line-height: 1.7;
+    margin: 25px 0 30px;
+}
+
+/* BUTTONS */
+.button {
+    min-width: 145px;
+    min-height: 46px;
+    padding: 12px 25px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 11px;
+    font-weight: 800;
+    transition: .3s;
+}
+
+.button-light {
+    background: white;
+    color: black;
+}
+
+.button-light:hover {
+    background: #aaa;
+    transform: translateY(-3px);
+}
+
+
+/* SECTIONS */
+.section {
+    padding: 100px 10%;
+}
+
+.section-kicker {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 4px;
+    color: #888;
+}
+
+.intro {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+    background: #0d0d0d;
+}
+
+.intro h2,
+.collection h2,
+.statement h2 {
+    font-size: clamp(35px, 5.5vw, 65px);
+    line-height: 1.05;
+    font-weight: 900;
+}
+
+.intro h2 span,
+.collection h2 span,
+.statement h2 span {
+    color: #777;
+}
+
+.intro-copy p {
+    max-width: 570px;
+    color: #aaa;
+    font-size: 14px;
+    line-height: 1.9;
+    margin: 25px 0;
+}
+
+.text-link {
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: 800;
+}
+
+/* COLLECTION */
+.collection {
+    background: #fafafa;
+    color: #090909;
+}
+
+.collection-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.collection .section-kicker {
+    margin-bottom: 15px;
+    color: #777;
+}
+
+.collection-heading > p {
+    color: #777;
+    font-size: 10px;
+    line-height: 1.8;
+    letter-spacing: 2px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.product-card {
+    min-width: 0;
+}
+
+.product-image {
+    width: 100%;
+    height: 340px;
+    display: grid;
+    place-items: center;
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(ellipse, #555, #171717 65%, #050505);
+}
+
+.image-two {
+    background: radial-gradient(ellipse, #777, #333 45%, #111);
+}
+
+.image-three {
+    background: radial-gradient(ellipse, #444, #1b1b1b 45%, #050505);
+}
+
+.product-symbol {
+    font-size: 62px;
+    font-weight: 900;
+    color: #ccc;
+    z-index: 1;
+}
+
+.product-tag {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: rgb(0, 0, 0);
+    color: rgb(253, 253, 253);
+    padding: 8px 10px;
+    font-size: 9px;
+    font-weight: 800;
+}
+
+.product-info {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 17px 0;
+}
+
+.product-info h3 {
+    font-size: 13px;
+    margin-bottom: 6px;
+}
+
+.product-info p {
+    color: #777;
+    font-size: 11px;
+}
+
+.product-info strong {
+    font-size: 13px;
+}
+
+.demo-note {
+    color: #777;
+    font-size: 10px;
+    margin-top: 18px;
+}
+
+/* STATEMENT */
+.statement {
+    min-height: 390px;
+    padding: 80px 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: radial-gradient(ellipse, #292929, #080808 70%);
+}
+
+.statement > p {
+    font-size: 10px;
+    letter-spacing: 5px;
+    color: #aaa;
+    margin-bottom: 22px;
+}
+
+.button-outline {
+    border: 1px solid #aaa;
+    margin-top: 30px;
+}
+
+.button-outline:hover {
+    background: white;
+    color: black;
+}
+
+/* FOOTER */
+footer {
+    background: #050505;
+    border-top: 1px solid #222;
+    padding: 45px 7% 25px;
+    text-align: center;
+}
+
+.footer-brand {
+    display: inline-block;
+    font-size: 22px;
+}
+
+footer > p {
+    color: #888;
+    font-size: 12px;
+    margin: 12px 0 22px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.footer-links a {
+    color: #aaa;
+    font-size: 11px;
+}
+
+footer small {
+    color: #666;
+    font-size: 9px;
+}
+
+/* TABLETS */
+@media screen and (max-width: 900px) {
+
+    .site-header {
+        padding: 15px 5%;
+    }
+
+    .hero {
+        padding: 50px 7%;
+    }
+
+    .section {
+        padding: 75px 7%;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .product-image {
+        height: 300px;
+    }
+
+}
+
+/* MOBILE PHONES */
+@media screen and (max-width: 600px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .site-header {
+        min-height: 68px;
+        padding: 12px 5%;
+    }
+
+    .brand {
+        font-size: 17px;
+        letter-spacing: 1.5px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .navigation {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 25px 7%;
+        background: #090909;
+        border-top: 1px solid #333;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 23px;
+    }
+
+    .navigation.open {
+        display: flex;
+    }
+
+    .navigation a {
+        font-size: 14px;
+        padding: 5px 0;
+    }
+
+    .hero {
+        min-height: 570px;
+        height: 85svh;
+        max-height: 750px;
+        padding: 45px 7%;
+    }
+
+    .hero-content {
+        margin-top: -20px;
+    }
+
+    .eyebrow {
+        font-size: 9px;
+        letter-spacing: 3px;
+    }
+
+    .hero h1 {
+        font-size: clamp(39px, 10vw, 58px);
+        letter-spacing: -2px;
+        line-height: 1.05;
+    }
+
+    .hero-description {
+        font-size: 12px;
+        max-width: 300px;
+        margin: 20px 0 25px;
+    }
+
+    .hero-emblem {
+        width: 100%;
+        height: 40%;
+        right: -20%;
+        top: 48%;
+        opacity: .22;
+    }
+
+    .crown {
+        font-size: 110px;
+    }
+
+    .emblem-word {
+        font-size: 115px;
+        letter-spacing: -7px;
+    }
+
+    .scroll-note {
+        left: 7%;
+        bottom: 18px;
+        font-size: 8px;
+    }
+
+    .section {
+        padding: 65px 7%;
+    }
+
+    .intro {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .intro h2,
+    .collection h2 {
+        font-size: clamp(34px, 9vw, 45px);
+    }
+
+    .intro-copy p {
+        font-size: 13px;
+    }
+
+    .collection-heading {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .collection-heading > p {
+        text-align: left;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .product-image {
+        height: auto;
+        aspect-ratio: 1 / 1;
+    }
+
+    .product-info {
+        padding: 15px 0 22px;
+    }
+
+    .statement {
+        min-height: 330px;
+        padding: 65px 15px;
+    }
+
+    .statement h2 {
+        font-size: clamp(42px, 11vw, 60px);
+    }
+
+    footer {
+        padding: 40px 5% 25px;
+    }
+
+}
+
+/* SMALL PHONES */
+@media screen and (max-width: 360px) {
+
+    .brand {
+        font-size: 15px;
+        letter-spacing: 1px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .eyebrow {
+        letter-spacing: 2px;
+    }
+
+    .product-info h3 {
+        font-size: 12px;
+    }
+
+    .footer-links {
+        gap: 15px;
+    }
+
+
+/* PRODUCT IMAGES */
+
+.product-image {
+    width: 100%;
+    height: 340px;
+    overflow: hidden;
+    position: relative;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.08);
+}
+
+/* MOBILE PRODUCT IMAGES */
+
+@media screen and (max-width: 600px) {
+    .product-image {
+        height: auto;
+        aspect-ratio: 1 / 1;
+    }
+}
+
+}
